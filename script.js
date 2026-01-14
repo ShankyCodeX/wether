@@ -15,6 +15,7 @@ async function getWeather(city) {
     try {
         const response = await fetch(url);
         const data = await response.json();
+        console.log(data);
 
         if (response.ok) {
             document.getElementById("weather-info").style.display = "block";

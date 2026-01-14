@@ -18,6 +18,16 @@ async function getWeather(city) {
         console.log(data);
 
         if (response.ok) {
+            // 1. Get the icon code from the API (e.g., "01d", "04n")
+const iconCode = data.weather[0].icon;
+
+// 2. Create the full URL for the icon
+const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
+
+// 3. Update the image tag in your HTML
+const iconElement = document.getElementById("weather-icon");
+iconElement.src = iconUrl;
+iconElement.alt = data.weather[0].description;
             document.getElementById("weather-info").style.display = "block";
             document.getElementById("error-message").style.display = "none";
             

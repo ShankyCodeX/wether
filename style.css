@@ -1,29 +1,88 @@
+/* style.css */
+:root {
+    --primary-blue: #0083b0;
+    --secondary-blue: #00b4db;
+    --glass-bg: rgba(255, 255, 255, 0.2);
+}
+
 body {
-    background: linear-gradient(135deg, #00b4db, #0083b0);
-    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, var(--secondary-blue), var(--primary-blue));
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
+    color: #333;
 }
+
 .card {
-    background: white;
-    padding: 2rem;
-    border-radius: 20px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2.5rem;
+    border-radius: 25px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
     text-align: center;
+    width: 350px;
+    transition: transform 0.3s ease;
 }
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.search {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
 input {
-    padding: 10px;
-    border-radius: 5px;
+    flex: 1;
+    padding: 12px;
+    border-radius: 10px;
     border: 1px solid #ddd;
+    outline: none;
+    font-size: 14px;
 }
+
 button {
-    padding: 10px 20px;
-    background: #0083b0;
+    padding: 12px 20px;
+    background: var(--primary-blue);
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #005f80;
+}
+
+/* This adds the smooth "Fade-In" effect when weather appears */
+.weather {
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#temp {
+    font-size: 4rem;
+    margin: 10px 0;
+    font-weight: 800;
+}
+
+#description {
+    text-transform: capitalize;
+    color: #666;
+    font-style: italic;
+}
+
+#error-message {
+    font-weight: bold;
+    margin-top: 15px;
 }

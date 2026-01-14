@@ -1,4 +1,4 @@
-const apiKey = "API_KEY";
+const apiKey = "YOUR_SECRET_API_KEY";
 const searchBtn = document.getElementById("search-btn");
 const cityInput = document.getElementById("city-input");
 
